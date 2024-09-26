@@ -167,6 +167,7 @@ footer {
 /* Button */
 .formular .btn {
     background-color: #009640;
+    font-weight: bold;
     color: #fff;
     padding: 12px 45px;
     border: none;
