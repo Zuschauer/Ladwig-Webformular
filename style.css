@@ -71,7 +71,7 @@ p {
 
 .hero {
     text-align: center;
-    padding: 0 0 40px;
+    padding: 0 15px 40px 15px;
     background-color: #e7eee9;
     border-radius: 8px;
     margin-bottom: 40px;
