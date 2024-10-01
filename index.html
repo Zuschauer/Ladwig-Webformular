@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" -->
-        <!-- href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lato:wght@400;700&display=swap"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
+    <!-- Die folgenden externen Stylesheets sind kommentiert. Sollte es nicht erforderlich sein, entfernen -->
+    <!-- href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lato:wght@400;700&display=swap"> -->
+    <!-- href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
     <link rel="stylesheet" href="font.css">
     <link rel="stylesheet" href="style.css">
     <title>Startseite</title>
-
 </head>
 
 <body>
@@ -25,15 +24,13 @@
     <main>
         <div class="container">
             <section class="hero">
-                <img class="logo" src="images/pizzeria-da-angelo_logo.svg" alt="">
+                <!-- Alt-Attribut hinzugefügt für die Barrierefreiheit -->
+                <img class="logo" src="images/pizzeria-da-angelo_logo.svg" alt="Logo der Pizzeria Da Angelo">
                 <h1>Lieber Gast</h1>
-                <p>wir freuen uns, dass Sie uns auf unserer Webseite besuchen.
+                <p>Wir freuen uns, dass Sie uns auf unserer Webseite besuchen.
                     Pizza und Pasta zum Abholen oder Liefern. Wählen Sie aus.
                     <br>
                     Wir wünschen Ihnen jetzt schon einen guten Appetit.</p>
-            </section>
-
-            <section class="featured-projects">
             </section>
 
             <section>
@@ -42,16 +39,17 @@
                         <fieldset>
                             <legend>Pizzabestellung</legend>
                             <div>
-                                <input type="radio" id="abholung" name="bestellung" value="abholung">
+                                <!-- ARIA-Attribute hinzugefügt, um eine bessere Unterstützung für Screenreader zu bieten -->
+                                <input type="radio" id="abholung" name="bestellung" value="abholung" aria-label="Abholung">
                                 <label for="abholung">Abholung</label>
                             </div>
                             <div>
-                                <input type="radio" id="lieferung" name="bestellung" value="Lieferung">
+                                <input type="radio" id="lieferung" name="bestellung" value="lieferung" required checked aria-label="Lieferung">
                                 <label for="lieferung">Lieferung</label>
                             </div>
                             <div>
                                 <label class="pt-3" for="pizzaauswahl">Pizzaauswahl</label>
-                                <select name="pizza" id="pizzaauswahl">
+                                <select name="pizza" id="pizzaauswahl" required>
                                     <option value="" disabled selected>Bitte auswählen</option>
                                     <option value="margherita">Margherita</option>
                                     <option value="pepperoni">Pepperoni</option>
@@ -79,31 +77,32 @@
                             <legend>Kontaktdaten</legend>
                             <div>
                                 <label for="vorname">Vorname:*</label>
-                                <input type="text" id="vorname" name="vorname" aria-required="true" required/>
+                                <input type="text" id="vorname" name="vorname" aria-required="true" required pattern="[A-Za-zÄÖÜäöüß]{2,}" title="Bitte geben Sie einen gültigen Namen ein.">
+                                <!-- Plausibilitätsprüfung hinzugefügt (pattern und title), um die Eingabe zu validieren -->
                             </div>
                             <div>
                                 <label for="nachname">Nachname:*</label>
-                                <input type="text" id="nachname" name="nachname" aria-required="true" required/>
+                                <input type="text" id="nachname" name="nachname" aria-required="true" required pattern="[A-Za-zÄÖÜäöüß]{2,}" title="Bitte geben Sie einen gültigen Nachnamen ein.">
                             </div>
                             <div>
                                 <label for="straße">Straße:*</label>
-                                <input type="text" id="straße" name="straße" aria-required="true" required/>
+                                <input type="text" id="straße" name="straße" aria-required="true" required>
                             </div>
                             <div>
                                 <label for="hausnummer">Hausnummer:*</label>
-                                <input type="text" id="hausnummer" name="hausnummer" aria-required="true" required/>
+                                <input type="text" id="hausnummer" name="hausnummer" aria-required="true" required pattern="\d+[a-zA-Z]?" title="Bitte geben Sie eine gültige Hausnummer ein.">
                             </div>
                             <div>
                                 <label for="plz">PLZ:*</label>
-                                <input type="text" id="plz" name="plz" aria-required="true" required/>
+                                <input type="text" id="plz" name="plz" aria-required="true" required pattern="\d{5}" title="Bitte geben Sie eine gültige Postleitzahl (5-stellig) ein.">
                             </div>
                             <div>
                                 <label for="ort">Ort:*</label>
-                                <input type="text" id="ort" name="ort" aria-required="true" required/>
+                                <input type="text" id="ort" name="ort" aria-required="true" required pattern="[A-Za-zÄÖÜäöüß\s]+" title="Bitte geben Sie einen gültigen Ort ein.">
                             </div>
                             <div>
                                 <label for="email">Email:*</label>
-                                <input type="email" id="email" name="email" aria-required="true" required/>
+                                <input type="email" id="email" name="email" aria-required="true" required>
                             </div>
                             <div>
                                 <label for="bemerkung">Bemerkung:</label>
@@ -112,19 +111,16 @@
                         </fieldset>
                     </div>
 
-                        <button class="btn" type="submit">Bestellen</button>
+                    <button class="btn" type="submit">Bestellen</button>
 
                     <p>*Pflichtfelder</p>
                 </form>
             </section>
-
         </div>
     </main>
 
     <footer>
-        <div class="container">
-            <p>2024 - Kerem Hacibeyoglu</p>
-        </div>
+        
     </footer>
 </body>
 
