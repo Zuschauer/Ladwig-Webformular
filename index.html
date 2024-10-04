@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Die folgenden externen Stylesheets sind kommentiert. Sollte es nicht erforderlich sein, entfernen -->
     <!-- href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lato:wght@400;700&display=swap"> -->
     <!-- href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
     <link rel="stylesheet" href="font.css">
@@ -24,7 +23,6 @@
     <main>
         <div class="container">
             <section class="hero">
-                <!-- Alt-Attribut hinzugefügt für die Barrierefreiheit -->
                 <img class="logo" src="images/pizzeria-da-angelo_logo.svg" alt="Logo der Pizzeria Da Angelo">
                 <h1>Lieber Gast</h1>
                 <p>Wir freuen uns, dass Sie uns auf unserer Webseite besuchen.
@@ -39,7 +37,6 @@
                         <fieldset>
                             <legend>Pizzabestellung</legend>
                             <div>
-                                <!-- ARIA-Attribute hinzugefügt, um eine bessere Unterstützung für Screenreader zu bieten -->
                                 <input type="radio" id="abholung" name="bestellung" value="abholung" aria-label="Abholung">
                                 <label for="abholung">Abholung</label>
                             </div>
@@ -78,7 +75,6 @@
                             <div>
                                 <label for="vorname">Vorname:*</label>
                                 <input type="text" id="vorname" name="vorname" aria-required="true" required pattern="[A-Za-zÄÖÜäöüß]{2,}" title="Bitte geben Sie einen gültigen Namen ein.">
-                                <!-- Plausibilitätsprüfung hinzugefügt (pattern und title), um die Eingabe zu validieren -->
                             </div>
                             <div>
                                 <label for="nachname">Nachname:*</label>
@@ -120,7 +116,7 @@
     </main>
 
     <footer>
-        
+
     </footer>
 </body>
 
